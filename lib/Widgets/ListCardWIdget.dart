@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Models/Product.dart';
 import 'package:garantix_flutter/Pages/HomePage/ProductPage.dart';
 import 'package:page_transition/page_transition.dart';
@@ -29,7 +30,7 @@ class ListCardWidget extends StatelessWidget {
       height: 150,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.purpleAccent,
+        color: kPrimaryColor,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
@@ -55,7 +56,7 @@ class ListCardWidget extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.purpleAccent,
+        color: kPrimaryColor,
       ),
       child: ClipRRect(
         child: ClipRRect(
@@ -85,7 +86,7 @@ class ListCardWidget extends StatelessWidget {
       height: 50,
       width: 130,
       decoration: BoxDecoration(
-        color: Colors.redAccent,
+        color: kPrimaryColor,
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(10),
           topRight: Radius.circular(10),

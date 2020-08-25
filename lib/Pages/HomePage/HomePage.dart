@@ -1,10 +1,11 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:garantix_flutter/AdditionalPage.dart';
 import 'package:garantix_flutter/Pages/HomePage/CreateNewDocPage.dart';
 import 'package:garantix_flutter/Pages/HomePage/ListViewPage.dart';
 import 'package:garantix_flutter/Pages/HomePage/ProfilePage.dart';
 import 'package:page_transition/page_transition.dart';
+
+import '../../Constants.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,23 +25,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Garantix",
-          style: TextStyle(color: Colors.black),
-        ),
+        title: Container(
+            width: MediaQuery.of(context).size.width / 3,
+            child: Image.asset("assets/images/logo_entier.png")),
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
-        actions: [
+        /*actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.more_vert),
             color: Colors.black,
           )
-        ],
+        ],*/
       ),
       bottomNavigationBar: ConvexAppBar(
         height: 60,
+        top: -15,
+        curveSize: 90,
 
         style: TabStyle.fixedCircle,
         backgroundColor: Colors.white,
@@ -49,14 +51,14 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.home,
           ),
           TabItem(
-            icon: Icons.add,
+            icon: Icons.upload_outlined,
           ),
           TabItem(
             icon: Icons.person,
           ),
         ],
         initialActiveIndex: 0, //optional, default as 0
-        activeColor: Colors.redAccent,
+        activeColor: kPrimaryColor,
         color: Colors.grey,
         onTap: (index) {
           setState(() {

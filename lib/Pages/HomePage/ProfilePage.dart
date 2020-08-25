@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Providers/AuthProvider.dart';
 import 'package:garantix_flutter/Providers/UserProvider.dart';
 import 'package:provider/provider.dart';
@@ -37,56 +38,61 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 40),
-            CircleAvatar(
-              radius: 85,
-              backgroundColor: Colors.black.withOpacity(0.3),
-              child: CircleAvatar(
-                radius: 80,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(200),
-                  child: Image.asset("images/about.png"),
+        child: Center(
+          child: ListView(
+            children: [
+              SizedBox(height: 40),
+              CircleAvatar(
+                radius: 85,
+                backgroundColor: Colors.black.withOpacity(0.3),
+                child: CircleAvatar(
+                  radius: 80,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(200),
+                    child: Image.asset("images/about.png"),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              provider.user.username,
-              style: TextStyle(fontSize: 30),
-            ),
-            Text(
-              provider.user.email,
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 10),
-            _profileItem("Verson 1.0.0"),
-            _profileItem(
-                "Saved Products ${provider.user.savedDocs.documents.length}"),
-            GestureDetector(
-              onTap: () => auth.logoutUser(context),
-              child: Container(
-                padding: const EdgeInsets.all(8.0),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.redAccent,
+              SizedBox(height: 10),
+              Center(
+                child: Text(
+                  provider.user.username,
+                  style: TextStyle(fontSize: 30),
                 ),
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Center(
-                    child: Text(
-                      "Logout",
-                      style: TextStyle(fontSize: 28, color: Colors.white),
+              ),
+              Center(
+                child: Text(
+                  provider.user.email,
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              SizedBox(height: 10),
+              _profileItem("Verson 1.0.1"),
+              _profileItem(
+                  "Saved Products ${provider.user.savedDocs.documents.length}"),
+              GestureDetector(
+                onTap: () => auth.logoutUser(context),
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: kPrimaryColor,
+                  ),
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Center(
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(fontSize: 28, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

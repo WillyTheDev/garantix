@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:garantix_flutter/Pages/HomePage/HomePage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:show_up_animation/show_up_animation.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'ItemPage.dart';
 import 'homePage.dart';
 
@@ -20,8 +19,6 @@ class _AdditionalPage1State extends State<AdditionalPage1> {
   Future<void> scanBarcodeNormal() async {
     String barcodeScanRes;
     try {
-      barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-          "#ff6666", "Cancel", true, ScanMode.BARCODE);
       print(barcodeScanRes);
     } on PlatformException {
       barcodeScanRes = 'Failed to get platform version.';

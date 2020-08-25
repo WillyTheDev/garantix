@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Login",
                       style: TextStyle(
                         letterSpacing: 1.2,
-                        color: Colors.redAccent,
+                        color: kPrimaryColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
                       ),

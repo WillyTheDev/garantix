@@ -5,7 +5,7 @@ import 'package:garantix_flutter/Providers/UserProvider.dart';
 import 'package:garantix_flutter/Widgets/HanldeImageFunctions.dart';
 
 const kThemeColor = Colors.white;
-const kPrimaryColor = Colors.redAccent;
+const kPrimaryColor = Color(0xFF0098FF);
 
 kReplaceRoute(Widget widget, BuildContext context) {
   return Navigator.pushReplacement(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Pages/AuthPages/SplashPage.dart';
-import 'package:garantix_flutter/Pages/HomePage/HomePage.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -37,13 +36,9 @@ class _LoadingPageState extends State<LoadingPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/images/logo.png",
-                height: mediaSize.width / 5,
+                "assets/images/logo_entier.png",
+                height: mediaSize.width / 4,
               ),
-              Text(
-                "Garantix",
-                style: TextStyle(fontSize: mediaSize.width / 12),
-              )
             ],
           ),
         ),

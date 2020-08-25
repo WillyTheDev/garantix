@@ -201,7 +201,7 @@ class _LoginPageState extends State<SignupPage> {
                     Text(
                       "Create Account",
                       style: TextStyle(
-                        color: Colors.redAccent,
+                        color: kPrimaryColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
                       ),

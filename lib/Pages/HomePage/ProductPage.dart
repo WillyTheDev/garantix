@@ -13,7 +13,6 @@ import 'package:toast/toast.dart';
 
 class ProductPage extends StatefulWidget {
   final Product product;
-
   ProductPage({this.product});
   @override
   _ProductPageState createState() => _ProductPageState();
@@ -173,7 +172,7 @@ class _ProductPageState extends State<ProductPage> {
       floatingActionButton: new FloatingActionButton(
           elevation: 0.0,
           child: new Icon(Icons.edit),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: kPrimaryColor,
           onPressed: () {
             Navigator.push(
               context,

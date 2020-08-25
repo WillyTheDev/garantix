@@ -62,18 +62,18 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
         margin: EdgeInsets.only(right: 10),
         child: Column(
           children: [
-            Container(height: 2, width: 90, color: Colors.redAccent),
+            Container(height: 2, width: 70, color: kPrimaryColor),
             SizedBox(height: 5),
             Text(
               label,
               style: TextStyle(
-                color: Colors.redAccent,
+                color: kPrimaryColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
               ),
             ),
             SizedBox(height: 5),
-            Container(height: 2, width: 90, color: Colors.redAccent),
+            Container(height: 2, width: 70, color: kPrimaryColor),
           ],
         ),
       ),
@@ -116,7 +116,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
             SizedBox(height: 10),
             Text(
               "Tap to change",
-              style: TextStyle(color: Colors.redAccent, fontSize: 18),
+              style: TextStyle(color: kPrimaryColor, fontSize: 18),
             ),
           ],
         ),
@@ -179,7 +179,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                             height: 80,
                             width: 80,
                             decoration: BoxDecoration(
-                              color: Colors.redAccent,
+                              color: kPrimaryColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -201,7 +201,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                             height: 80,
                             width: 80,
                             decoration: BoxDecoration(
-                              color: Colors.redAccent,
+                              color: kPrimaryColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -298,7 +298,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
     var provider = Provider.of<UserProvider>(context);
     return LoadingOverlay(
       isLoading: _isLoading,
-      progressIndicator: SpinKitPouringHourglass(color: Colors.redAccent),
+      progressIndicator: SpinKitPouringHourglass(color: kPrimaryColor),
       color: Colors.black,
       opacity: 0.7,
       child: Scaffold(
@@ -383,8 +383,8 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: this.docName == ""
-                          ? Colors.redAccent.withOpacity(0.4)
-                          : Colors.redAccent,
+                          ? kPrimaryColor.withOpacity(0.4)
+                          : kPrimaryColor,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     height: 60,
