@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Pages/AuthPages/SplashPage.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
+
+import 'main.dart';
 
 class LoadingPage extends StatefulWidget {
   static String id = "LoadingPage";
@@ -12,6 +15,14 @@ class LoadingPage extends StatefulWidget {
 
 class _LoadingPageState extends State<LoadingPage> {
   void loadingData() async {
+    var result = await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+        IOSFlutterLocalNotificationsPlugin>()
+        ?.requestPermissions(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
     await Future.delayed(Duration(seconds: 2));
     kReplaceRoute(SplashPage(), context);
   }

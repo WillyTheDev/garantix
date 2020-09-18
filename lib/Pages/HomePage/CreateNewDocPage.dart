@@ -7,6 +7,7 @@ import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Providers/UserProvider.dart';
 import 'package:garantix_flutter/Widgets/AddImageWidget.dart';
 import 'package:garantix_flutter/Widgets/HanldeImageFunctions.dart';
+import 'package:garantix_flutter/main.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
@@ -267,9 +268,23 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
         "timestamp": Timestamp.now(),
         "expiredate": dateTime,
       });
-
+      int notificationsDays = dateTime.difference(DateTime.now()).inDays - 10 ;
       await provider.refetchUserdata();
-
+      var scheduledNotificationDateTime =
+      DateTime.now().add(Duration(days: notificationsDays));
+      var androidPlatformChannelSpecifics =
+      AndroidNotificationDetails('your other channel id',
+          'your other channel name', 'your other channel description');
+      var iOSPlatformChannelSpecifics =
+      IOSNotificationDetails();
+      NotificationDetails platformChannelSpecifics = NotificationDetails(
+          androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
+      await flutterLocalNotificationsPlugin.schedule(
+          0,
+          '$docName',
+          'Votre Garantie arrive bientôt à éxpiration 📆',
+          scheduledNotificationDateTime,
+          platformChannelSpecifics);
       Toast.show("Sucessfully uploaded!".tr(), context,
           duration: Toast.LENGTH_SHORT, gravity: Toast.CENTER);
     } catch (error) {
