@@ -3,6 +3,7 @@ import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Providers/AuthProvider.dart';
 import 'package:garantix_flutter/Providers/UserProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -67,9 +68,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(height: 10),
-              _profileItem("Verson 1.0.1"),
+              _profileItem("Version 1.0.1"),
               _profileItem(
-                  "Saved Products ${provider.user.savedDocs.documents.length}"),
+                  "Saved Products".tr() + " ${provider.user.savedDocs.documents.length}"),
               GestureDetector(
                 onTap: () => auth.logoutUser(context),
                 child: Container(
@@ -84,7 +85,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     padding: const EdgeInsets.all(16.0),
                     child: Center(
                       child: Text(
-                        "Logout",
+                        "Logout".tr(),
                         style: TextStyle(fontSize: 28, color: Colors.white),
                       ),
                     ),

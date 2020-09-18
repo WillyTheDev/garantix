@@ -7,6 +7,7 @@ import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Pages/AuthPages/LoginPage.dart';
 import 'package:garantix_flutter/Providers/AuthProvider.dart';
 import 'package:garantix_flutter/Widgets/UserAuthWidget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
 
 class SignupPage extends StatefulWidget {
@@ -146,9 +147,9 @@ class _LoginPageState extends State<SignupPage> {
         style: TextStyle(fontSize: 20, color: Colors.black87),
         obscureText: lable == "password" && _isVisible,
         decoration: InputDecoration(
-          labelText: "$lable",
+          labelText: "$lable".tr(),
           labelStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-          hintText: "Enter your $lable",
+          hintText: "Enter your $lable".tr(),
           hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
           errorText: isValid ? null : "Please enter a valid $lable",
           suffixIcon: lable == "password"
@@ -205,9 +206,9 @@ class _LoginPageState extends State<SignupPage> {
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
                       ),
-                    ),
+                    ).tr(),
                     Text(
-                      "Please fill the input below here.",
+                      "Please fill the input below here.".tr(),
                       style: TextStyle(
                         color: Colors.black.withOpacity(0.4),
                         fontWeight: FontWeight.bold,
@@ -222,7 +223,7 @@ class _LoginPageState extends State<SignupPage> {
                     inputField("password", Icons.lock, passwordValidate,
                         passwordValid),
                     SizedBox(height: 10),
-                    buttonContainer("Register", provider),
+                    buttonContainer("Register".tr(), provider),
                     SizedBox(height: 10),
                   ],
                 ),
@@ -243,7 +244,7 @@ class _LoginPageState extends State<SignupPage> {
                           color: kPrimaryColor,
                           fontWeight: FontWeight.bold,
                         ),
-                      ),
+                      ).tr()
                     ),
                   ],
                 ),

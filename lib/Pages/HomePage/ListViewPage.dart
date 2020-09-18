@@ -4,6 +4,7 @@ import 'package:garantix_flutter/Models/Product.dart';
 import 'package:garantix_flutter/Providers/UserProvider.dart';
 import 'package:garantix_flutter/Widgets/ListCardWIdget.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ListViewPage extends StatefulWidget {
   @override
@@ -24,14 +25,14 @@ class _ListViewPageState extends State<ListViewPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.upload_outlined,
+                    Icons.add,
                     size: 80,
                     color: Colors.black38,
                   ),
                   Text(
                     "Upload Products",
                     style: TextStyle(color: Colors.black38, fontSize: 30),
-                  )
+                  ).tr()
                 ],
               ),
             )

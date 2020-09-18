@@ -10,6 +10,7 @@ import 'package:garantix_flutter/Widgets/HomeItemWidget.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProductPage extends StatefulWidget {
   final Product product;
@@ -20,18 +21,18 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   final List months = [
-    "jan",
-    "feb",
-    "mar",
-    "apr",
-    "may",
-    "jun",
-    "jul",
-    "aug",
-    "sep",
-    "oct",
-    "nov",
-    "dec"
+    "jan".tr(),
+    "feb".tr(),
+    "mar".tr(),
+    "apr".tr(),
+    "may".tr(),
+    "jun".tr(),
+    "jul".tr(),
+    "aug".tr(),
+    "sep".tr(),
+    "oct".tr(),
+    "nov".tr(),
+    "dec".tr()
   ];
 
   _noImage() {
@@ -143,7 +144,7 @@ class _ProductPageState extends State<ProductPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Expires on",
+                "Expires on".tr(),
               ),
               Container(
                 padding: EdgeInsets.all(10),
@@ -206,15 +207,15 @@ class _ProductPageState extends State<ProductPage> {
           children: [
             _imageView(),
             HomeItem(
-              label: "Product Bill",
+              label: "Product Bill".tr(),
               onTap: () => _fullImage(widget.product.productBill, "bill"),
             ),
             HomeItem(
-              label: "Warrenty Ticket",
+              label: "Warrenty Ticket".tr(),
               onTap: () => _fullImage(widget.product.warrentyTicket, "notes"),
             ),
             HomeItem(
-              label: "Personal Notes",
+              label: "Personal Notes".tr(),
               onTap: () => _fullImage(widget.product.personalNotes, "tickets"),
             ),
           ],

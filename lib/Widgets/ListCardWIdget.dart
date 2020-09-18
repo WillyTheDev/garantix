@@ -42,7 +42,7 @@ class ListCardWidget extends StatelessWidget {
       ),
       child: Center(
         child: Icon(
-          Icons.file_copy_outlined,
+         Icons.file_copy_outlined,
           color: Colors.white,
           size: 80,
         ),

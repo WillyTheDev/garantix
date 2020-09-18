@@ -7,6 +7,7 @@ import 'package:garantix_flutter/Providers/AuthProvider.dart';
 import 'package:garantix_flutter/Widgets/UserAuthWidget.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -116,11 +117,11 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(fontSize: 20, color: Colors.black87),
         obscureText: lable == "password" && _isVisible,
         decoration: InputDecoration(
-          labelText: "$lable",
+          labelText: "$lable".tr(),
           labelStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-          hintText: "Enter your $lable",
+          hintText: "Enter your $lable".tr(),
           hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-          errorText: isValid ? null : "Please enter a valid $lable",
+          errorText: isValid ? null : "Please enter a valid $lable".tr(),
           suffixIcon: lable == "password"
               ? IconButton(
                   icon: Icon(
@@ -176,7 +177,7 @@ class _LoginPageState extends State<LoginPage> {
                         fontWeight: FontWeight.bold,
                         fontSize: 35,
                       ),
-                    ),
+                    ).tr(),
                     Text(
                       "Please Login to continue.",
                       style: TextStyle(
@@ -185,13 +186,13 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 13,
                         letterSpacing: 1.2,
                       ),
-                    ),
+                    ).tr(),
                     SizedBox(height: 20),
                     inputField("Email", Icons.mail, mailValidate, emailValid),
                     inputField("password", Icons.lock, passwordValidate,
                         passwordValid),
                     SizedBox(height: 10),
-                    buttonContainer("Login", provider),
+                    buttonContainer("Login".tr(), provider),
                     SizedBox(height: 10),
                     Center(
                       child: GestureDetector(
@@ -207,7 +208,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Forgot Password?",
                           style: TextStyle(color: kPrimaryColor),
-                        ),
+                        ).tr(),
                       ),
                     ),
                   ],
@@ -219,17 +220,17 @@ class _LoginPageState extends State<LoginPage> {
                     Text(
                       "Don't Have an Account?",
                       style: TextStyle(color: Colors.black38),
-                    ),
+                    ).tr(),
                     SizedBox(width: 5),
                     GestureDetector(
                       onTap: () => kReplaceRoute(SignupPage(), context),
                       child: Text(
-                        "Signup",
+                        "Sign up",
                         style: TextStyle(
                           color: kPrimaryColor,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w700
                         ),
-                      ),
+                      ).tr(),
                     ),
                   ],
                 ),

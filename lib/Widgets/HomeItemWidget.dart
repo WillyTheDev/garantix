@@ -13,12 +13,6 @@ class HomeItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: GestureDetector(
-        // onTap: () {
-        //   Navigator.push(
-        //       context,
-        //       PageTransition(
-        //           type: PageTransitifitWidthonType.downToUp, child: ItemPage()));
-        // },
         onTap: onTap,
         child: Container(
           width: mediaSize.width,

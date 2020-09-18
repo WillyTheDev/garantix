@@ -31,19 +31,11 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
-        /*actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.more_vert),
-            color: Colors.black,
-          )
-        ],*/
       ),
       bottomNavigationBar: ConvexAppBar(
         height: 60,
         top: -15,
         curveSize: 90,
-
         style: TabStyle.fixedCircle,
         backgroundColor: Colors.white,
         items: [
@@ -51,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.home,
           ),
           TabItem(
-            icon: Icons.upload_outlined,
+            icon: Icons.add,
           ),
           TabItem(
             icon: Icons.person,

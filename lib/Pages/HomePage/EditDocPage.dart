@@ -13,6 +13,7 @@ import 'package:garantix_flutter/Widgets/HanldeImageFunctions.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:uuid/uuid.dart';
 
 class EditDocPage extends StatefulWidget {
@@ -57,18 +58,18 @@ class _CreateNewDocPageState extends State<EditDocPage> {
   }
 
   List months = [
-    "jan",
-    "feb",
-    "mar",
-    "apr",
-    "may",
-    "jun",
-    "jul",
-    "aug",
-    "sep",
-    "oct",
-    "nov",
-    "dec"
+    "jan".tr(),
+    "feb".tr(),
+    "mar".tr(),
+    "apr".tr(),
+    "may".tr(),
+    "jun".tr(),
+    "jul".tr(),
+    "aug".tr(),
+    "sep".tr(),
+    "oct".tr(),
+    "nov".tr(),
+    "dec".tr()
   ];
 
   _dateBlock(String label) {
@@ -131,7 +132,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
             ),
             SizedBox(height: 10),
             Text(
-              "Tap to change",
+              "Tap to change".tr(),
               style: TextStyle(color: kPrimaryColor, fontSize: 18),
             ),
           ],
@@ -178,7 +179,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                 child: Column(
                   children: [
                     Text(
-                      "Select Image",
+                      "Select Image".tr(),
                       style: TextStyle(fontSize: 25),
                     ),
                     SizedBox(height: 30),
@@ -277,7 +278,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
           top: -15,
           child: GestureDetector(
             onTap: () => _hanldeShowDialogBox(
-                "Do you want to delete this file peremenently?",
+                "Do you want to delete this file peremenently?".tr(),
                 () => _handleDeleteImage(url, doc)),
             child: CircleAvatar(
               radius: 30,
@@ -334,7 +335,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                         ),
                         child: Center(
                           child: Text(
-                            "Yes",
+                            "Yes".tr(),
                             style: TextStyle(
                               color: Colors.white,
                             ),
@@ -356,7 +357,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                         ),
                         child: Center(
                           child: Text(
-                            "No",
+                            "No".tr(),
                             style: TextStyle(
                               color: Colors.white,
                             ),
@@ -524,7 +525,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
         appBar: AppBar(
           elevation: 0,
           title: Text(
-            "Edit Product",
+            "Edit Product".tr(),
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -536,7 +537,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                   color: kPrimaryColor,
                 ),
                 onPressed: () => _hanldeShowDialogBox(
-                    "Do you want to delete the entire Document?",
+                    "Do you want to delete the entire Document?".tr(),
                     _hanldeDeleteWholeDoc)),
           ],
           leading: IconButton(
@@ -570,10 +571,10 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                     },
                     controller: TextEditingController()..text = docName,
                     decoration: InputDecoration(
-                      hintText: "Add the product name",
+                      hintText: "Add the product name".tr(),
                     ),
                   ),
-                  "Product Name",
+                  "Product Name".tr(),
                 ),
                 kWrapChild(
                     widget.product.productImage != null
@@ -583,7 +584,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                             file: productImage,
                             onClose: () => hanldeClose("a"),
                             onTap: () => kSelectImage(context, provider, "a")),
-                    "Product Image"),
+                    "Product Image".tr()),
                 kWrapChild(
                     widget.product.productBill != null
                         ? _showImage(widget.product.productBill, "productBill")
@@ -591,7 +592,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                             file: productBill,
                             onClose: () => hanldeClose("b"),
                             onTap: () => kSelectImage(context, provider, "b")),
-                    "Product Bill"),
+                    "Product Bill".tr()),
                 kWrapChild(
                     widget.product.warrentyTicket != null
                         ? _showImage(
@@ -600,7 +601,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                             file: warrentyTicket,
                             onClose: () => hanldeClose("c"),
                             onTap: () => kSelectImage(context, provider, "c")),
-                    "Warrenty Ticket"),
+                    "Warrenty Ticket".tr()),
                 kWrapChild(
                     widget.product.personalNotes != null
                         ? _showImage(
@@ -609,8 +610,8 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                             file: personalNotes,
                             onClose: () => hanldeClose("d"),
                             onTap: () => kSelectImage(context, provider, "d")),
-                    "Personal Notes"),
-                kWrapChild(pickDate(), "Expire Date"),
+                    "Personal Notes".tr()),
+                kWrapChild(pickDate(), "Expire Date".tr()),
                 GestureDetector(
                   onTap: this.docName == ""
                       ? null
@@ -626,7 +627,7 @@ class _CreateNewDocPageState extends State<EditDocPage> {
                     width: 150,
                     child: Center(
                       child: Text(
-                        "Upload",
+                        "Upload".tr(),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

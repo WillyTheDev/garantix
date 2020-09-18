@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:garantix_flutter/Constants.dart';
 import 'package:garantix_flutter/Widgets/UserAuthWidget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ForgotPassPage extends StatefulWidget {
   @override
@@ -122,7 +123,7 @@ class _ForgotPassPageState extends State<ForgotPassPage> {
                 fontWeight: FontWeight.bold,
                 fontSize: 35,
               ),
-            ),
+            ).tr(),
             Text(
               "Please enter your email. We'll send link to your email",
               style: TextStyle(
@@ -131,10 +132,10 @@ class _ForgotPassPageState extends State<ForgotPassPage> {
                 fontSize: 13,
                 letterSpacing: 1.2,
               ),
-            ),
+            ).tr(),
             SizedBox(height: 30),
             inputField("Email", Icons.email, mailValidate, emailValid),
-            buttonContainer("Send Link"),
+            buttonContainer("Send Link".tr()),
           ],
         ),
       ),

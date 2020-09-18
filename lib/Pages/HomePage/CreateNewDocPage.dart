@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -11,6 +11,7 @@ import 'package:loading_overlay/loading_overlay.dart';
 import 'package:provider/provider.dart';
 import 'package:toast/toast.dart';
 import 'package:uuid/uuid.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class CreateNewDocPage extends StatefulWidget {
   @override
@@ -41,18 +42,18 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
   }
 
   List months = [
-    "jan",
-    "feb",
-    "mar",
-    "apr",
-    "may",
-    "jun",
-    "jul",
-    "aug",
-    "sep",
-    "oct",
-    "nov",
-    "dec"
+    "jan".tr(),
+    "feb".tr(),
+    "mar".tr(),
+    "apr".tr(),
+    "may".tr(),
+    "jun".tr(),
+    "jul".tr(),
+    "aug".tr(),
+    "sep".tr(),
+    "oct".tr(),
+    "nov".tr(),
+    "dec".tr()
   ];
 
   _dateBlock(String label) {
@@ -115,7 +116,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
             ),
             SizedBox(height: 10),
             Text(
-              "Tap to change",
+              "Tap to change".tr(),
               style: TextStyle(color: kPrimaryColor, fontSize: 18),
             ),
           ],
@@ -164,7 +165,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                     Text(
                       "Select Image",
                       style: TextStyle(fontSize: 25),
-                    ),
+                    ).tr(),
                     SizedBox(height: 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -225,18 +226,6 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
     );
   }
 
-  //  SimpleDialogOption(
-  //               child: Text("Photo from camera"),
-  //               onPressed: () async {
-  //                 File file = await handleTakePhoto(context, provider);
-  //                 handleSetStateFile(label, file);
-  //               }),
-  //           SimpleDialogOption(
-  //               child: Text("Image from Gallary"),
-  //               onPressed: () async {
-  //                 File file = await handleChooseFromGallary(context, provider);
-  //                 handleSetStateFile(label, file);
-  //               }),
 
   _handleSaveDoc(UserProvider provider) async {
     setState(() {
@@ -281,7 +270,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
 
       await provider.refetchUserdata();
 
-      Toast.show("Sucessfully uploaded!", context,
+      Toast.show("Sucessfully uploaded!".tr(), context,
           duration: Toast.LENGTH_SHORT, gravity: Toast.CENTER);
     } catch (error) {
       Toast.show("Unexpected Error occured", context,
@@ -308,7 +297,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
           title: Text(
             "Add Document",
             style: TextStyle(color: Colors.black),
-          ),
+          ).tr(),
           backgroundColor: Colors.white,
 
           leading: IconButton(
@@ -331,13 +320,6 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
             padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                Container(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset("images/upload.jpg"),
-                  ),
-                ),
-                SizedBox(height: 30),
                 SizedBox(height: 10),
                 kWrapChild(
                   TextField(
@@ -347,35 +329,35 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                       });
                     },
                     decoration:
-                        InputDecoration(hintText: "Add the product name"),
+                        InputDecoration(hintText: "Add the product name".tr()),
                   ),
-                  "Product Name",
+                  "Product Name".tr(),
                 ),
                 kWrapChild(
                     AddImageWiget(
                         file: productImage,
                         onClose: () => hanldeClose("a"),
                         onTap: () => kSelectImage(context, provider, "a")),
-                    "Product Image"),
+                    "Product Image".tr()),
                 kWrapChild(
                     AddImageWiget(
                         file: productBill,
                         onClose: () => hanldeClose("b"),
                         onTap: () => kSelectImage(context, provider, "b")),
-                    "Product Bill"),
+                    "Product Bill".tr()),
                 kWrapChild(
                     AddImageWiget(
                         file: warrentyTicket,
                         onClose: () => hanldeClose("c"),
                         onTap: () => kSelectImage(context, provider, "c")),
-                    "Warrenty Ticket"),
+                    "Warrenty Ticket".tr()),
                 kWrapChild(
                     AddImageWiget(
                         file: personalNotes,
                         onClose: () => hanldeClose("d"),
                         onTap: () => kSelectImage(context, provider, "d")),
-                    "Personal Notes"),
-                kWrapChild(pickDate(), "Expire Date"),
+                    "Personal Notes".tr()),
+                kWrapChild(pickDate(), "Expire Date".tr()),
                 GestureDetector(
                   onTap: this.docName == ""
                       ? null
@@ -391,7 +373,7 @@ class _CreateNewDocPageState extends State<CreateNewDocPage> {
                     width: 150,
                     child: Center(
                       child: Text(
-                        "Upload",
+                        "Upload".tr(),
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
